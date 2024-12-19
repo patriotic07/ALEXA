@@ -215,8 +215,8 @@ async def txt_handler(bot: Client, m: Message):
                         text = await resp.text()
                         url = re.search(r"(https://.*?playlist.m3u8.*?)\"", text).group(1)
           
-            elif "videos.classplusapp in url:               
-                url = requests.get('https://api.classplusapp.com/cams/uploader/video/jw-signed-url', headers=headers, params=params)
+            elif 'videos.classplusapp' in url:
+             url = requests.get(f'https://api.classplusapp.com/cams/uploader/video/jw-signed-url?url={url}', headers={'x-access-token': 'eyJjb3Vyc2VJZCI6IjQ1NjY4NyIsInR1dG9ySWQiOm51bGwsIm9yZ0lkIjo0ODA2MTksImNhdGVnb3J5SWQiOm51bGx9r'}).json()['url']
                           
             elif "master.mpd" in url:
                 vid_id = url.split('/')[-2]
