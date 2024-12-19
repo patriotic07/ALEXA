@@ -30,4 +30,3 @@ itsdangerous==2.0.1
 bs4
 beautifulsoup4
 pytube
-Pil_Image
