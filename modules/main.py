@@ -14,9 +14,6 @@ from aiohttp import ClientSession
 from pyromod import listen
 from subprocess import getstatusoutput
 from aiohttp import web
-from pytube import Playlist  #Youtube Playlist Extractor
-from yt_dlp import YoutubeDL
-
 from pyrogram import Client, filters
 from pyrogram.types import Message
 from pyrogram.errors import FloodWait
