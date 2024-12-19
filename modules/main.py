@@ -14,7 +14,6 @@ from aiohttp import ClientSession
 from pyromod import listen
 from subprocess import getstatusoutput
 from aiohttp import web
-from PIL import Image
 from pytube import Playlist  #Youtube Playlist Extractor
 from yt_dlp import YoutubeDL
 
