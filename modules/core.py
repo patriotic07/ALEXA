@@ -18,7 +18,6 @@ from pyrogram.types import Message
 from utils import progress_bar
 import subprocess
 from math import ceil
-from PIL import Image
 from pytube import Playlist  #Youtube Playlist Extractor
 from yt_dlp import YoutubeDL
 
