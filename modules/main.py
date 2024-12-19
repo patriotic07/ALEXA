@@ -220,8 +220,8 @@ async def txt_handler(bot: Client, m: Message):
                           
             elif "master.mpd" in url:
                 vid_id = url.split('/')[-2]
-                url = f"https://pw.jarviss.workers.dev?v={vid_id}&quality={raw_text2}"
-
+                url = f"https://madxpw.onrender.com{vid_id}master.m3u8?{token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MzQ5MzA0ODkuNDcyLCJkYXRhIjp7Il9pZCI6IjY0ZTZmMjgwZmM0N2JjMDAxOGFmNTQ2MiIsInVzZXJuYW1lIjoiODkyNDg3MDY4NiIsImZpcnN0TmFtZSI6Ikd1bmphbiIsImxhc3ROYW1lIjoiIiwib3JnYW5pemF0aW9uIjp7Il9pZCI6IjVlYjM5M2VlOTVmYWI3NDY4YTc5ZDE4OSIsIndlYnNpdGUiOiJwaHlzaWNzd2FsbGFoLmNvbSIsIm5hbWUiOiJQaHlzaWNzd2FsbGFoIn0sInJvbGVzIjpbIjViMjdiZDk2NTg0MmY5NTBhNzc4YzZlZiJdLCJjb3VudHJ5R3JvdXAiOiJJTiIsInR5cGUiOiJVU0VSIn0sImlhdCI6MTczNDMyNTY4OX0.tYGt4VtnZBMTdL3ZWMK9WRhGRozwkh0Xc2At1K2Vlmk}"
+                
             name1 = links[i][0].replace("\t", "").replace(":", "").replace("/", "").replace("+", "").replace("#", "").replace("|", "").replace("@", "").replace("*", "").replace(".", "").replace("https", "").replace("http", "").strip()
             name = f'{str(count).zfill(3)}) {name1[:60]}'
 
