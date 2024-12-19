@@ -252,7 +252,7 @@ async def txt_handler(bot: Client, m: Message):
 
 
 #===============================================================
-            if raw_text4 == "YES":
+            if raw_text2 == "YES":
                 # Check the format of the link to extract video name and topic name accordingly
                 if links[i][0].startswith("("):
                     # Extract the topic name for format: (TOPIC) Video Name:URL
