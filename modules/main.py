@@ -220,7 +220,7 @@ async def txt_handler(bot: Client, m: Message):
                 
             elif "master.mpd" in url:
                 vid_id = url.split('/')[-2]
-                url = f"https://madxpw.onrender.com/{vid_id}/master.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MzU4MDUzNDYuMTU2LCJkYXRhIjp7Il9pZCI6IjYzNWE5NTljOTZjM2I1MDAxODhjNmYxNyIsInVzZXJuYW1lIjoiOTU5ODU3MzQ3MyIsImZpcnN0TmFtZSI6IkFua2l0IiwibGFzdE5hbWUiOiJTaGFreWEiLCJvcmdhbml6YXRpb24iOnsiX2lkIjoiNWViMzkzZWU5NWZhYjc0NjhhNzlkMTg5Iiwid2Vic2l0ZSI6InBoeXNpY3N3YWxsYWguY29tIiwibmFtZSI6IlBoeXNpY3N3YWxsYWgifSwiZW1haWwiOiJhbmtpdHBhdG5pOTVAZ21haWwuY29tIiwicm9sZXMiOlsiNWIyN2JkOTY1ODQyZjk1MGE3NzhjNmVmIl0sImNvdW50cnlHcm91cCI6IklOIiwidHlwZSI6IlVTRVIifSwiaWF0IjoxNzM1MjAwNTQ2fQ.W3ShXJYTsevdYRdVtU0jBIc_dtlVWL-IJcjetYuSHug"
+                url = f"https://madxpw-api-e0913deb3016.herokuapp.com/{vid_id}/master.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MzU4MDUzNDYuMTU2LCJkYXRhIjp7Il9pZCI6IjYzNWE5NTljOTZjM2I1MDAxODhjNmYxNyIsInVzZXJuYW1lIjoiOTU5ODU3MzQ3MyIsImZpcnN0TmFtZSI6IkFua2l0IiwibGFzdE5hbWUiOiJTaGFreWEiLCJvcmdhbml6YXRpb24iOnsiX2lkIjoiNWViMzkzZWU5NWZhYjc0NjhhNzlkMTg5Iiwid2Vic2l0ZSI6InBoeXNpY3N3YWxsYWguY29tIiwibmFtZSI6IlBoeXNpY3N3YWxsYWgifSwiZW1haWwiOiJhbmtpdHBhdG5pOTVAZ21haWwuY29tIiwicm9sZXMiOlsiNWIyN2JkOTY1ODQyZjk1MGE3NzhjNmVmIl0sImNvdW50cnlHcm91cCI6IklOIiwidHlwZSI6IlVTRVIifSwiaWF0IjoxNzM1MjAwNTQ2fQ.W3ShXJYTsevdYRdVtU0jBIc_dtlVWL-IJcjetYuSHug"
                 
             name1 = links[i][0].replace("\t", "").replace(":", "").replace("/", "").replace("+", "").replace("#", "").replace("|", "").replace("@", "").replace("*", "").replace(".", "").replace("https", "").replace("http", "").strip()
             name = f'{str(count).zfill(3)}) {name1[:60]}'
