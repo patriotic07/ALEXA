@@ -1,14 +1,14 @@
 {
-    "name": "𝐓𝐞𝐱𝐭 𝐋𝐞𝐞𝐜𝐡",
-    "description": "𝑻𝒆𝒙𝒕 𝑳𝒆𝒆𝒄𝒉 𝑽𝒊𝒅𝒆𝒐 𝑬𝒙𝒕𝒓𝒂𝒄𝒕𝒐𝒓 𝑭𝒐𝒓 𝑻𝒆𝒍𝒆𝒈𝒓𝒂𝒎",
-    "logo": "https://graph.org/file/f12a07e9ed8dc349da2e7.jpg",
+    "name": "𝐓𝐗𝐓 𝐔𝐏𝐋𝐎𝐀𝐃𝐄𝐑",
+    "description": "𝐓𝐗𝐓 𝐔𝐏𝐋𝐎𝐀𝐃𝐄𝐑 𝐁𝐎𝐓 by Ankit Shakya",
+    "logo": "",
     "keywords": [
         "text-video",
         "video-extract",
         "pyrogram"
     ],
-    "repository": "https://github.com/SudoR2spr/txt-leech-bot",
-    "success_url": "https://t.me/Opleech_WD",
+    "repository": "https://github.com/AnkitShakya95/ALEXA",
+    "success_url": "https://t.me/Ankit_Shakya72",
     "stack": "heroku-22",
     "env": {
         "API_ID": {
@@ -23,12 +23,8 @@
             "description": "𝑬𝒏𝒕𝒆𝒓 𝒀𝒐𝒖𝒓 𝑩𝒐𝒕 𝑻𝒐𝒌𝒆𝒏",
             "required": true
         },
-        "OWNER_ID": {
-            "description": "𝑼𝒔𝒆𝒓 𝑰𝑫 𝑶𝒇 𝑩𝒐𝒕 𝑶𝒘𝒏𝒆𝒓",
-            "required": true
-        },
-        "SUDO_USERS": {
-            "description": "𝑺𝒖𝒅𝒐 𝑰𝑫'𝒔 (𝒀𝒐𝒖 𝑪𝒂𝒏 𝑨𝒅𝒅 𝑴𝒖𝒍𝒕𝒊𝒑𝒍𝒆 𝑩𝒚 𝑮𝒊𝒗𝒊𝒏𝒈 𝑺𝒑𝒂𝒄𝒆)",
+        "PORT": {
+            "description": "𝘌𝘕𝘛𝘌𝘙 𝘈𝘕𝘠 𝘗𝘖𝘙𝘛 𝘓𝘐𝘒𝘌 8080",
             "required": true
         }
     },
@@ -39,6 +35,9 @@
         },
         {
             "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git"
+        },
+        {
+            "url": "https://github.com/amivin/aria2-heroku.git"
         }
     ]
-    }
+}
