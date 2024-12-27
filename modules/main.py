@@ -314,8 +314,8 @@ async def txt_handler(bot: Client, m: Message):
 
             try:  
                 
-                cc = f'**🎞️ VIDEO ID: {str(count).zfill(3)}.\n\n📄 Title: {name1} {res} @Ankit_Shakya73.mkv\n\n<pre><code>🔖 Batch Name: {b_name}</code></pre>\n\n📥 Extracted By : {CR}**'
-                cc1 = f'**📁 FILE ID: {str(count).zfill(3)}.\n\n📄 Title: {name1} @Ankit_Shakya73.pdf \n\n<pre><code>🔖 Batch Name: {b_name}</code></pre>\n\n📥 Extracted By : {CR}**'
+                cc = f'**🎞️ VID_ID: {str(count).zfill(3)}.\n\n📄 Title: {name1} {res} @Ankit_Shakya73.mkv\n\n<pre><code>🔖 Batch Name: {b_name}</code></pre>\n\n📥 Extracted By : {CR}**'
+                cc1 = f'**📁 PDF_ID: {str(count).zfill(3)}.\n\n📄 Title: {name1} @Ankit_Shakya73.pdf \n\n<pre><code>🔖 Batch Name: {b_name}</code></pre>\n\n📥 Extracted By : {CR}**'
                     
                 
                 if "drive" in url:
@@ -360,14 +360,21 @@ async def txt_handler(bot: Client, m: Message):
 
                     except FloodWait as e:
                         await m.reply_text(str(e))
-                        await asyncio.sleep(2)  # Use asyncio.sleep for non-blocking sleep
-                        return  # Exit the function to avoid continuation
-
-                    except Exception as e:
-                        await m.reply_text(f"An error occurred: {str(e)}")
-                        await asyncio.sleep(4)  # You can replace this with more specific
+                        time.sleep(e.x)
                         continue
-                        
+
+                elif ".pdf" in url:
+                    try:
+                        cmd = f'yt-dlp -o "{name}.pdf" "{url}"'
+                        download_cmd = f"{cmd} -R 25 --fragment-retries 25"
+                        os.system(download_cmd)
+                        copy = await bot.send_document(chat_id=m.chat.id, document=f'{name}.pdf', caption=cc1)
+                        count += 1
+                        os.remove(f'{name}.pdf')
+                    except FloodWait as e:
+                        await m.reply_text(str(e))
+                        time.sleep(e.x)
+                        continue                   
                           
                 else:
                     Show = f"❊⟱ 𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝𝐢𝐧𝐠 ⟱❊ »\n\n📄 Title:- `{name}\n\n⌨ 𝐐𝐮𝐥𝐢𝐭𝐲 » {raw_text2}`\n\n**🔗 𝐔𝐑𝐋 »** `{url}`\n\n**𝐁𝐨𝐭 𝐌𝐚𝐝𝐞 𝐁𝐲 ✦ ᴀɴᴋɪᴛ sʜᴀᴋʏᴀ"
