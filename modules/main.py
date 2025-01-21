@@ -224,15 +224,7 @@ async def txt_handler(bot: Client, m: Message):
         CR = credit
     else:
         CR = raw_text3
-        
-    await editable.edit("**Enter Your PW Token For MPD URL or send 'unknown' for use default**")
-    input4: Message = await bot.listen(editable.chat.id)
-    raw_text4 = input4.text
-    await input4.delete(True)
-    if raw_text4 == 'pw':
-        token = pw_token
-    else:
-        token = raw_text4    
+    
         
     await editable.edit("Now send the **Thumb url**\n**Eg :** ``\n\nor Send `no`")
     input6 = message = await bot.listen(editable.chat.id)
@@ -268,28 +260,10 @@ async def txt_handler(bot: Client, m: Message):
 
             elif '/master.mpd' in url:
              vid_id =  url.split("/")[-2]
-             url =  f"https://madxpw-api-e0913deb3016.herokuapp.com/{vid_id}/master.m3u8?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MzU4MDUzNDYuMTU2LCJkYXRhIjp7Il9pZCI6IjYzNWE5NTljOTZjM2I1MDAxODhjNmYxNyIsInVzZXJuYW1lIjoiOTU5ODU3MzQ3MyIsImZpcnN0TmFtZSI6IkFua2l0IiwibGFzdE5hbWUiOiJTaGFreWEiLCJvcmdhbml6YXRpb24iOnsiX2lkIjoiNWViMzkzZWU5NWZhYjc0NjhhNzlkMTg5Iiwid2Vic2l0ZSI6InBoeXNpY3N3YWxsYWguY29tIiwibmFtZSI6IlBoeXNpY3N3YWxsYWgifSwiZW1haWwiOiJhbmtpdHBhdG5pOTVAZ21haWwuY29tIiwicm9sZXMiOlsiNWIyN2JkOTY1ODQyZjk1MGE3NzhjNmVmIl0sImNvdW50cnlHcm91cCI6IklOIiwidHlwZSI6IlVTRVIifSwiaWF0IjoxNzM1MjAwNTQ2fQ.W3ShXJYTsevdYRdVtU0jBIc_dtlVWL-IJcjetYuSHug"
+             url =  f"https://pw-links-api.onrender.com/process?v=https://d1d34p8vz63oiq.cloudfront.net/{vid_id}/master.mpd&quality={res}"
 
             name1 = links[i][0].replace("\t", "").replace(":", "").replace("/", "").replace("+", "").replace("#", "").replace("|", "").replace("@", "").replace("*", "").replace(".", "").replace("https", "").replace("http", "").strip()
             name = f'{str(count).zfill(3)}) {name1[:60]}'
-                      
-            if "/master.mpd" in url :
-                if "https://sec1.pw.live/" in url:
-                    url = url.replace("https://sec1.pw.live/","https://d1d34p8vz63oiq.cloudfront.net/")
-                    print(url)
-                else: 
-                    url = url    
-
-                print("mpd check")
-                key = await helper.get_drm_keys(url)
-                print(key)
-                await m.reply_text(f"got keys form api : \n`{key}`")
-          
-            if "/master.mpd" in url:
-                cmd= f" yt-dlp -k --allow-unplayable-formats -f bestvideo.{quality} --fixup never {url} "
-                print("counted")
-
-            
 
             if "edge.api.brightcove.com" in url:
                 bcov = 'bcov_auth=eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3MjQyMzg3OTEsImNvbiI6eyJpc0FkbWluIjpmYWxzZSwiYXVzZXIiOiJVMFZ6TkdGU2NuQlZjR3h5TkZwV09FYzBURGxOZHowOSIsImlkIjoiZEUxbmNuZFBNblJqVEROVmFWTlFWbXhRTkhoS2R6MDkiLCJmaXJzdF9uYW1lIjoiYVcxV05ITjVSemR6Vm10ak1WUlBSRkF5ZVNzM1VUMDkiLCJlbWFpbCI6Ik5Ga3hNVWhxUXpRNFJ6VlhiR0ppWTJoUk0wMVdNR0pVTlU5clJXSkRWbXRMTTBSU2FHRnhURTFTUlQwPSIsInBob25lIjoiVUhVMFZrOWFTbmQ1ZVcwd1pqUTViRzVSYVc5aGR6MDkiLCJhdmF0YXIiOiJLM1ZzY1M4elMwcDBRbmxrYms4M1JEbHZla05pVVQwOSIsInJlZmVycmFsX2NvZGUiOiJOalZFYzBkM1IyNTBSM3B3VUZWbVRtbHFRVXAwVVQwOSIsImRldmljZV90eXBlIjoiYW5kcm9pZCIsImRldmljZV92ZXJzaW9uIjoiUShBbmRyb2lkIDEwLjApIiwiZGV2aWNlX21vZGVsIjoiU2Ftc3VuZyBTTS1TOTE4QiIsInJlbW90ZV9hZGRyIjoiNTQuMjI2LjI1NS4xNjMsIDU0LjIyNi4yNTUuMTYzIn19.snDdd-PbaoC42OUhn5SJaEGxq0VzfdzO49WTmYgTx8ra_Lz66GySZykpd2SxIZCnrKR6-R10F5sUSrKATv1CDk9ruj_ltCjEkcRq8mAqAytDcEBp72-W0Z7DtGi8LdnY7Vd9Kpaf499P-y3-godolS_7ixClcYOnWxe2nSVD5C9c5HkyisrHTvf6NFAuQC_FD3TzByldbPVKK0ag1UnHRavX8MtttjshnRhv5gJs5DQWj4Ir_dkMcJ4JaVZO3z8j0OxVLjnmuaRBujT-1pavsr1CCzjTbAcBvdjUfvzEhObWfA1-Vl5Y4bUgRHhl1U-0hne4-5fF0aouyu71Y6W0eg'
