@@ -260,7 +260,7 @@ async def txt_handler(bot: Client, m: Message):
 
             elif '/master.mpd' in url:
              vid_id =  url.split("/")[-2]
-             url =  f"https://pw-links-api.onrender.com/process?v=https://d1d34p8vz63oiq.cloudfront.net/{vid_id}/master.mpd&quality={res}"
+             url =  f"https://pw-links-api.onrender.com/process?v=https://sec1.pw.live/{vid_id}/master.mpd&quality={res}"
 
             name1 = links[i][0].replace("\t", "").replace(":", "").replace("/", "").replace("+", "").replace("#", "").replace("|", "").replace("@", "").replace("*", "").replace(".", "").replace("https", "").replace("http", "").strip()
             name = f'{str(count).zfill(3)}) {name1[:60]}'
